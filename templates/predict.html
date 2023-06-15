@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styl.css') }}">
+
+<head>
+	<title>Upload Video</title>
+</head>
+<body>
+	
+	
+<form method="POST" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+		<input type="file" name="file" accept="video/*">
+   <p>Drag your files here or click in this area.</p>
+  <button type="submit" value="Upload">upload</button>
+	</form>
+
+	{% if result %}
+		<h2>Prediction Result:</h2>
+		<p>{{ result }}</p>
+	{% endif %}
+
+</body>
+</html>
